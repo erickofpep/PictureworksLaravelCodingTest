@@ -14,6 +14,6 @@ class UserandComments extends Seeder
      */
     public function run()
     {
-        factory(User::class, 10)->make();
+        factory(App\User::class, 2)->create();
     }
 }

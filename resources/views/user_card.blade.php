@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>User Card - name of User</title>
+    <title>@if(in_array($user)? $user->name : ) @endif</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
@@ -12,7 +12,7 @@
         <section id="main">
             <header>
                 <span class="avatar"><img src="images/users/" alt="" /></span>
-                <h1>user name</h1>
+                <h1>user name {{ $user->name; }}</h1>
                 <p>user comment</p>
             </header>
         </section>
