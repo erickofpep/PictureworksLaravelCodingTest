@@ -7,4 +7,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/user', [UserController::class, 'userview'])->name('user');
+Route::get('/user/{$id}', [UserController::class, 'userview'])->name('user');
