@@ -30,14 +30,14 @@ class UserController extends Controller
     {
         $jsondata = $request->json()->all();
 
-        $validate_post_json_data = $request->validate([
+        $this->Validator::make(json_encode($request->$jsondata, true), [
             'password' => 'required|min:3|max:8',
             'id' => 'required|integer',
             'comments' => 'required',
         ]);
 
         $appendcomment = new User();
-        $appendcomment->comments->$jsondata['comment'];
+        $appendcomment->comments->$request->$jsondata->comments;
         $appendcomment->save();
     }
 }
