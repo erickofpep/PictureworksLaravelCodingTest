@@ -8,3 +8,5 @@ Route::get('/', function () {
 });
 
 Route::get('/user/{id}', [UserController::class, 'userview'])->name('user');
+
+Route::post('/user', [UserController::class, 'storeUserComment'])->name('user');

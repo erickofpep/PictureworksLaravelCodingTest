@@ -10,6 +10,11 @@ class UserController extends Controller
     public function userview($id)
     {
         $user = User::find($id);
-        return view('user_card', compact('user'));
+        return view('user_card', ['user_details' => $user]);
+    }
+
+    public function storeUserComment(Request $request)
+    {
+        dd($request);
     }
 }
