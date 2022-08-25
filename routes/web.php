@@ -7,12 +7,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/user/{id}', [UserController::class, 'userview'])->name('user');
+Route::get('/user/{id}', [UserController::class, 'userview']);
 
-Route::post('/postformdata', [UserController::class, 'appendformdata'])->name(
-    'postformdata'
-);
+Route::post('/postformdata', [UserController::class, 'appendformdata']);
 
-Route::post('/postjsondata', [UserController::class, 'appendjsondata'])->name(
-    'postjsondata'
-);
+Route::post('/postjsondata', [UserController::class, 'appendjsondata']);

@@ -1,3 +1,42 @@
 Laravel Version:
 Laravel Framework 8.83.23
 
+/***********************
+Routes implemented
+************************/
+
+1. Route::get('/user/{id}', [UserController::class, 'userview'])->name('user');
+Reqiured Parameter(s):
+"id" - of the user (must be integer).
+
+What this route does:
+This displays the name, comment of a particular user when that user's id is provided in the url.
+If there is no match for the user id, in the database (Eloquent query), no information will be shown.
+
+
+2.
+Route::post('/postformdata', [UserController::class, 'appendformdata'])->name(
+    'postformdata'
+);
+Reqiured Parameters:
+    password
+    id
+    comments
+
+What this does:
+
+
+
+3.
+Route::post('/postjsondata', [UserController::class, 'appendjsondata'])->name(
+    'postjsondata'
+);
+Reqiured Parameters:
+    {
+        "password":"xxxx"
+        "id":"1"
+        "comments":"Director"
+    }
+
+What this does:
+
