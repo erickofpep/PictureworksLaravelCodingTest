@@ -13,12 +13,31 @@ class UserController extends Controller
         return view('user_card', ['user_details' => $user]);
     }
 
-    public function appendUserComment(Request $request)
+    public function appendformdata(Request $request)
     {
-        $request_data = $request->validate([
+        $validate_post_form_data = $request->validate([
             'password' => 'required|min:3|max:8',
             'id' => 'required|integer',
             'comments' => 'required',
         ]);
+
+        $appendcomment = new User();
+        $appendcomment->comments->$request->comment;
+        $appendcomment->save();
+    }
+
+    public function appendjsondata(Request $request)
+    {
+        $jsondata = $request->json()->all();
+
+        $validate_post_json_data = $request->validate([
+            'password' => 'required|min:3|max:8',
+            'id' => 'required|integer',
+            'comments' => 'required',
+        ]);
+
+        $appendcomment = new User();
+        $appendcomment->comments->$jsondata['comment'];
+        $appendcomment->save();
     }
 }

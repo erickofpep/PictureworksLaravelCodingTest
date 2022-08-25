@@ -9,7 +9,10 @@ Route::get('/', function () {
 
 Route::get('/user/{id}', [UserController::class, 'userview'])->name('user');
 
-Route::post('/appendcomment', [
-    UserController::class,
-    'appendUserComment',
-])->name('appendcomment');
+Route::post('/postformdata', [UserController::class, 'appendformdata'])->name(
+    'postformdata'
+);
+
+Route::post('/postjsondata', [UserController::class, 'appendjsondata'])->name(
+    'postjsondata'
+);
