@@ -16,8 +16,8 @@ class UserController extends Controller
     public function appendUserComment(Request $request)
     {
         $request_data = $request->validate([
-            'password' => 'required',
-            'id' => 'required',
+            'password' => 'required|min:3|max:8',
+            'id' => 'required|integer',
             'comments' => 'required',
         ]);
     }
