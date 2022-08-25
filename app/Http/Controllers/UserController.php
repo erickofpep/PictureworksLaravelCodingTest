@@ -13,8 +13,12 @@ class UserController extends Controller
         return view('user_card', ['user_details' => $user]);
     }
 
-    public function storeUserComment(Request $request)
+    public function appendUserComment(Request $request)
     {
-        dd($request);
+        $request_data = $request->validate([
+            'password' => 'required',
+            'id' => 'required',
+            'comments' => 'required',
+        ]);
     }
 }
