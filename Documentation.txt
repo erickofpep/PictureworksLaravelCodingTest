@@ -23,8 +23,8 @@ Reqiured Parameters:
     id
     comments
 
-What this does:
-
+What this route does:
+It receives POST data (password,id,comments) in "form-data" format and updates the existing comments field in the  User model/table.
 
 
 3.
@@ -38,5 +38,10 @@ Reqiured Parameters:
         "comments":"Director"
     }
 
-What this does:
+What this route does:
+It receives POST data (password,id,comments) in JSON format and updates the existing comments field in the User model/table.
+
+
+NB:
+I added the /vendor directory in the pushed files so as to make serving easy and straight forward when cloned.
 
