@@ -9,8 +9,21 @@ class UserController extends Controller
 {
     public function userview($id)
     {
-        $user = User::find($id);
-        return view('user_card', ['user_details' => $user]);
+        // $user_details = User::find($id);
+
+        $user_details = User::find($id);
+
+        if (!$user_details) {
+            $resultArray = [
+                'message' => 'User does not exist.',
+            ];
+            return \Illuminate\Support\Facades\Response::json(
+                $resultArray,
+                200
+            );
+        }
+
+        return view('user_card', compact('user_details'));
     }
 
     public function appendformdata(Request $request)

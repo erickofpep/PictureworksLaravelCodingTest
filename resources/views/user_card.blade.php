@@ -1,7 +1,8 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>User Card | {{ $user->name }}</title>
+
+    <title>User Card | {{  $user_details->name }} </title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
@@ -12,8 +13,8 @@
         <section id="main">
             <header>
                 <span class="avatar"><img src="{{ asset('images/users/') }}" alt="" /></span>
-                <h1>{{ $user->name }}</h1>
-                <p>{{ $user->comments }}</p>
+                <h1>{{  $user_details->name }}</h1>
+                <p>{{  $user_details->comments }}</p>
             </header>
         </section>
         <footer id="footer">
